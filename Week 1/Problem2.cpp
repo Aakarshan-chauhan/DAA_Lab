@@ -18,11 +18,12 @@ int main() {
 			found += 1;
 			if (arr[j] == x)
 			{
+				compare ++;
 				found = true;
 				break;
 			}
 		}
-	if (sorted)
+	if (found)
 		std::cout << "Present " << compare;
 	else
 		std::cout << "Not Present " << compare;

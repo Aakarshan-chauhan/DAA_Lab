@@ -25,7 +25,7 @@ int ksmall (int arr[], int low, int high, int k){
     else if (i < k)
         return ksmall(arr, i+1, high, k);
     
-    else return ksmall(arr, l, i - 1, k);
+    else return ksmall(arr, low, i - 1, k);
     
 }
 
@@ -36,7 +36,7 @@ int main(){
         int n;
         cin>>n;
 
-        int []arr = new int [n];
+        int *arr = new int [n];
         for(int i =0 ; i < n ; i++){
             cin>>arr[i];
         }

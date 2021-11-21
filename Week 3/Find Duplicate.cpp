@@ -19,7 +19,7 @@ void quicksort(vector<int> &arr, int low, int high){
             arr[j] = temp;
         }
     }
-    temp = arr[i+1;
+    temp = arr[i+1];
     arr[i+1] = arr[high];
     arr[high] = temp;
     quicksort(arr, low, i);
@@ -44,7 +44,7 @@ int main(){
             if(arr[i] == arr[i+1])
             {
                 cout<<"YES\n";
-                flag = true
+                flag = true;
                 break;
             }
         }

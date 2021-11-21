@@ -8,12 +8,12 @@ int main()
     i = j = 0;
     cin >> num;
 
-    int []arr = new int [num];
+    int *arr = new int [num];
     for (int i = 0; i < num; ++i)
         cin >> arr[i];
 
     cin >> num2;
-    int []arr2 = new int[num2];
+    int *arr2 = new int[num2];
 
     for (int i = 0; i < num2; ++i)
         cin >> arr2[i];

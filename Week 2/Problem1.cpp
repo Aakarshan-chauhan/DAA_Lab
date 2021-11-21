@@ -44,7 +44,7 @@ int main(){
         }
         else{
             int count = 0;
-            while(int element : arr){
+            for(int element : arr){
                 if(element==arr[index])
                 {
                     count++;
