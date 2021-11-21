@@ -1,31 +1,34 @@
-#include<iostream>
+#include <iostream>
+#include<vector>
 
-int main() {
-	int n;
+using namespace std;
 
-	std::cin >> n;
-	int arr[n];
-	for (int i = 0; i < n; i++)
-		std::cin >> arr[i];
-	int x;
-	std::cin >> x;
+int main()
+{
 
-	int compare = 0;
-	bool found = false;
-	for(int i = 0 ; i < n && !found; i++)
-		for (int j = 1; j <n; j *= 2)
+	int t;
+	cin >> t;
+	while (t--)
+	{
+		int n;
+		cin >> n;
+		vector<int> arr(n);
+		for (int i = 0; i < n; i++)
+			cin >> arr[i];
+
+		int key;
+		cin >> key;
+		int compare = 0, flag = 0;
+		for (int x : arr)
 		{
-			found += 1;
-			if (arr[j] == x)
+			compare++;
+			if (x == key)
 			{
-				compare ++;
-				found = true;
+				flag = 1;
 				break;
 			}
 		}
-	if (found)
-		std::cout << "Present " << compare;
-	else
-		std::cout << "Not Present " << compare;
+		cout << (flag ? "Present " : "Not Present ") << compare << endl;
+	}
 	return 0;
 }

@@ -20,7 +20,7 @@ void dijkstra(vector<vector<int>> graph, int n, int source){
     {
         int u = pQ.top().second;
         pQ.pop();
-
+        
         for(int i = 0; i < n; i++)
         {
             if(graph[u][i] != 0)

@@ -48,6 +48,25 @@ void mergeSort(int arr[], int begin, int end){
     merge(arr, begin, mid, end);
 }
 
+int binary_search(int * arr, int l, int r, int x){
+    int mid = (l + r) /2 ;
+    if (l > r)
+    {
+        return -1;
+    }
+    if (arr[mid] == x){
+        return mid;
+    }
+
+    else if(arr[mid] > x){
+        return binary_search(arr, l, mid-1, x);
+    }
+
+    else{
+        return binary_search(arr, mid+1, r, x);
+    }
+
+}
 int main(){
     int t;
     cin>>t;
@@ -61,12 +80,22 @@ int main(){
             arr[i] = x;
 
         }
+        int sum;
+        cin>>sum;
         mergeSort(arr, 0, n);
-        for(int i =0 ; i < n; i++){
-            cout<<arr[i]<<" ";
+        bool flag = false;
+        for(int i = 0 ; i < n; i++){
+            int key = sum - arr[i];
+            int idx = binary_search(arr, i, n, key);
+            if(idx!=-1)
+            {
+                cout<<arr[i] << " "<<arr[idx]<<", ";
+                flag = true;
+            }
         }
-        cout<<"\n";
-
+        if(!flag){
+            cout<<"No such pair exist";
+        }
     }
     return 0;
 }
